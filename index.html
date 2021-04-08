@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@500&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="src/style.css" /> 
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+<form id="search-form"><input type="text" id="input-city" placeholder="Enter City here" />
+<button type="submit" class="btn btn-light">Search</button></form>
+<div><button type="button" class="btn btn-info" id="current-btn">Current</button>
+
+
+</form>
+
+<br/> 
+<div class="row">
+    <div class="col-8">
+<h1 class="current-city" id="city"> Paris</h1></div>
+<div class="actual-weather">
+    <img class="current-weather" src="images/sun.png" alt="" />
+<p id="temperature-description">Mostly Sunny</p>
+
+
+<div class="col-5"><h3 class="current-date" Id="date">Friday April 2 2021<br />
+    <span class="hour"></span></h3></div>
+<div class="current-temperature"><h4 id="temperature">20</div>
+    <p class=degrees><a href="#" id="celcius-link">°C</a> |
+    <a href="#" id="farenheit-link">°F</a></p></h4>
+
+    <div class="current-stats" id="stats">
+        <img src="images/humidity.png" alt="humidity" class="small-icons" />
+    <p class="humidity">50%</p>
+    <br /> 
+    <img src="images/wind.png" alt="wind" class="small-icons" />
+    <p class="wind">5mph</p>
+    
+    </div>
+
+<p>Temperature in ℃</p>
+
+   <ul>
+      <div class="row">
+    <div class="col-2">
+          <li><strong
+            ><span id="first-day">Mon</span>
+            <br />
+            <span class="weather-condition"
+              ><i class="fas fa-sun"></i
+            ></span>
+            <br />
+            <span id="first-day-temp">22</span>
+          </strong>
+          <div class="units">
+            <a href="#" id="future-temp-celcius">°C</a>
+            <img class='monday-weather' src="images/sun.png" alt="" />
+          </div> </li>
+      </div>
+      <div class="col-2">
+        <li><strong
+          ><span id="second-day">Tues</span>
+          <br />
+          <span class="weather-condition"
+            ><i class="fas fa-cloud"></i
+          ></span>
+          <br />
+          <span id="second-day-temperature">12</span>
+        </strong>
+        <div class="units">
+          <a href="#" id="future-temp-celcius">°C</a>
+          <img class='tuesday-weather' src="images/Cloud.png" alt="" />
+        </div>
+      </div></li>
+      <div class="col-2">
+        <li><strong
+          ><span id="third-day">Wed</span>
+          <br />
+          <span class="weather-condition"
+            ><i class="fas fa-sun"></i
+          ></span>
+          <br />
+          <span id="third-day-temp">24</span>
+        </strong>
+        <div class="units"><a href="#" id="future-temp-celcius">°C</a>
+          <img class='wednesday-weather' src="images/sun.png" alt="" />
+        </div>
+      </div></li>
+      <div class="col-2">
+        <li><strong>
+          <span id="fourth-day">Thur</span>
+          <br />
+          <span class="weather-condition"
+            ><i class="fas fa-cloud-showers-heavy"></i
+          ></span>
+          <br />
+          <span id="fouth-day-temp">12</span>
+        </strong>
+        <div class="units"><a href="#" id="future-temp-celcius">°C</a>
+          <img class='thursday-weather' src="images/Rain.png" alt="" />
+        </div></li>
+      </div>
+      <div class="col-2">
+        <li><strong
+          ><span id="fifth-day">Fri</span>
+          <br />
+          <span class="weather-condition"
+            ><i class="fas fa-cloud-sun"></i
+          ></span>
+          <br />
+          <span id="fifth-day-temp">18</span>
+        </strong>
+        <div class="units"><a href="#" id="future-temp-celcius">°C</a>
+          <img class='friday-weather' src="images/Cloud.png" alt="" />
+        </div></li>
+      </div>
+      <div class="col-2">
+        <li><strong
+          ><span id="sixth-day">Sat</span>
+          <br />
+          <span class="weather-condition"
+            ><i class="fas fa-cloud-sun"></i
+          ></span>
+          <br />
+          <span id="sixth-day-temp">24</span>
+        </strong>
+        <div class="units"><a href="#" id="future-temp-celcius">°C</a>
+          <img class='saturday-weather' src="images/sun.png" alt="" />
+        </div></li>
+    </div>
+    <div class="col-2">
+    <li><strong
+      ><span id=seventh-day">Sun</span>
+      <br />
+      <span class="weather-condition"
+        ><i class="fas fa-cloud-sun"></i
+      ></span>
+      <br />
+      <span id="seventh-day-temp">22</span>
+    </strong>
+    <div class="units"><a href="#" id="future-temp-celcius">°C</a>
+      <img class='sunday-weather' src="images/Cloud.png" alt="" />
+    </div></li>
+</div>
+</ul>
+  <br />
+  <p class="footer"> Coded by Sophie Jones ⎪ 2021</p>
+  <p><div class="icons">Icons made by <a href="https://www.flaticon.com/authors/good-ware" title="Good Ware">Good Ware</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+  </p>
+  <script src="src/index.js"></script>
+</body>
+</html>
