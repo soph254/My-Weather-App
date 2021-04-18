@@ -41,13 +41,6 @@ h4 {
   position: relative;
   left: 0px;
 }
-.degrees {
-  display: inline; 
-  font-size: medium;
-  position: relative;
-  top: -40px;
-  right: -300px; 
-}
 
 p {
   font-family: "Shippori Mincho B1", serif;
@@ -105,6 +98,20 @@ a {
   list-style: none; 
   margin: 0;
   padding: 9;
+}
+.units {
+  position: relative; 
+  left: 150px;
+  font-size: 20px;
+  top: -60px;
+}
+.units .active {
+  color: black; 
+  cursor: default;
+  text-decoration: none;
+}
+.units .active:hover {
+  text-decoration: none;
 }
 .wind {
   text-align: center; 
