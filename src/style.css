@@ -146,6 +146,10 @@ li:first-letter {
   margin-right: 15px;
   float: left;
 }
+.weather-condition {
+  font-size: 16px;
+  color: #A6A6A4;
+}
 .monday-weather {
   max-width: 100%;
   height: auto;
