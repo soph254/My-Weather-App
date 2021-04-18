@@ -43,46 +43,64 @@ function formatDate(date) {
 function updateCity(event) {
   event.preventDefault();
   let city = document.querySelector("#input-city");
+  updateCity(city.value)
   let cityName = document.querySelector(".current-city");
   cityName.innerHTML = `${city.value}`;
   let apiKey = "0f3d4549d502cb2a816dc90919978e74";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city.value}&units=imperial`;
   axios.get(`${apiUrl}&appid=${apiKey}`).then(displayTemperature);
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute("src",`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
 }
+
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", updateCity);
 
-function Celsius() {
-  let degree = document.querySelector(".current-temperature");
-  let temperature = degree.innerHTML;
-  degree.innerHTML = Math.round(((temperature - 32) * 5) / 9);
+function showCelciusTemperature(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+  fahrenheitLink.classList.add("active");
+  let celciusTemperature =(fahrenheitTemperature - 32) * (5/9);
+  temperatureElement.innerHTML = Math.round(celciusTemperature);
 }
 
-let celcius = document.querySelector("#celcius-link");
-celcius.addEventListener("click", Celsius);
-
-function Farenheit() {
-  let degree = document.querySelector(".current-temperature");
-  let temperature = degree.innerHTML;
-  degree.innerHTML = Math.round((temperature * 9) / 5 + 32);
+function showFahrenheitTemperature(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+  celciusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 }
 
-let farenheit = document.querySelector("#farenheit-link");
-farenheit.addEventListener("click", Farenheit);
+let fahrenheitTemperature = null;
+
 
 function displayTemperature(response) {
   let temperature = Math.round(response.data.main.temp);
   console.log(response);
   console.log(temperature);
-  let degree = document.querySelector(".current-temperature");
+  let degree = document.querySelector("#temperature");
   degree.innerHTML = `${temperature}`;
+
+  let description = document.querySelector("#stats");
+  description.innerHTML = response.data.weather[0].description;
+  
   let humidity = Math.round(response.data.main.humidity);
   let humidityElement = document.querySelector(".humidity");
   humidityElement.innerHTML = `${humidity}%`;
-  let wind = Math.round(response.data.wind.speed);
+
+
+  let wind = Math.round(response.data.main.humidity);
   let windSpeed = document.querySelector(".wind");
   windSpeed.innerHTML = `${wind}mph`;
+
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute("src", `http://openweathermap.org/img/wn$response.data.weather[0].icon@2xpng`);
+  
+  iconElement.serAttribute("alt", response.data.weather[0].description);
+
 }
+
 
 let dateElement = document.querySelector("#date");
 let currentTime = new Date();
@@ -100,7 +118,7 @@ function showPosition(position) {
   let longitude = position.coords.longitude;
   console.log(longitude);
   let apiKey = "0f3d4549d502cb2a816dc90919978e74";
-  let apiUrl = `https://appi.openweathermap.org/data/2.5/weather?lat=${latitude}&lon${longitude}&appid=${apiKey}&units=imperial`;
+  let apiUrl = `https://appi.openweathermap.org/data/2.5/weather?lat=${latitude}&lon${longitude}&appid=${apiKey}&units=metric`;
   console.log(apiUrl);
   axios.get(`${apiUrl}`).then(displayTemperature);
   axios.get(`${apiUrl}`).then(displayCurrentCity);
@@ -112,3 +130,12 @@ function getCurrentPosition(event) {
 }
 let currentButton = document.querySelector("#current-btn");
 currentButton.addEventListener("click", getCurrentPosition);
+
+
+let celciusLink = document.querySelector("#celcius-link");
+celciusLink.addEventListener("click", showCelciusTemperature);
+
+let fahrenheitLink = document.querySelector("#fahrenheit-Link");
+fahrenheitLink.addEventListener("click", showFahrenheitTemperature);
+
+search("London");

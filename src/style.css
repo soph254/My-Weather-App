@@ -1,227 +1,242 @@
 body { 
-    font-family:"Shippori Mincho B1", serif;
-  }
-  .container {
-    margin-top: 20px auto;
-    border-radius: 20px;
-    box-shadow: rgb(0 0 0 / 20%) 0 5px 5px 0;
-    max-width: 600px;
-    height: auto;
-  }
+  font-family: "Shippori Mincho B1", serif;
   
-  .row {
-    background-image: linear-gradient(to top, #fddb92 0%, #d1fdff 100%);
-  }
-  .card {
-    background-image: linear-gradient(to top, #fddb92 0%, #d1fdff 100%);
-  }
-  .current-city {
-    color: #5c636a;
-    font-size: 36px;
-    padding: 20px;
-    line-height: 1;
-    text-align: center;
-  }
-  #temperature-description {
-    text-align: left;
-    line-height: 1; 
-  }
-  h2 {
-    color: #5c636a;
-    font-family: "Shippori Mincho B1", serif;
-    font-size: 35px;
-    line-height: 1;
-    text-align: center;
-  }
-  
-  h3 {
-    font-family: "Shippori Mincho B1", serif;
-    font-size: 25px;
-    line-height: 1;
-    color: #5c636a;
-    text-align: center;
-  }
-  h4 {
-    text-align: center;
-    font-size: 25px;
-    color: #5c636a;
-  }
-  .current-temperature {
-    display: block;
-    position: relative;
-    left: 0px;
-  }
-  .degrees {
-    display: inline; 
-    font-size: medium;
-    position: relative;
-    top: -40px;
-    right: -300px; 
-  }
-  
-  p {
-    font-family: "Shippori Mincho B1", serif;
-    font-size: 35px;
-    line-height: 1;
-    color: #5c636a;
-    text-align: center;
-  }
-  
-  #current-date {
-    font-weight: 100;
-    font-size: 25px;
-    text-align: center; 
-  }
-  .search-form {
-    margin: 0 auto;
-  }
-  .button {
-    font-size: 13px;
-    box-shadow: rgb(0 0 0 / 20%) 0 3px 3px 0;
-    background-color: #134a61;
-    color: white;
-  }
-  .button:hover {
-    color: white;
-    background-color: #2da3d6;
-  }
-  #current-btn {
-    position: relative;
-    right: -300px;
-    top: -40px;
-    border-radius: 10px;
-  }
-  
-  a {
-    text-align: right;
-  }
-  
-  .current-stats {
-    position: relative;
-    top: -30px;
-    left: -50px;
-    font-size: 15px;
-  }
-  .wind {
-    text-align: center; 
-  }
-  .humidity {
+}
+
+   
+h1 {
+  color: #5c636a;
+  font-size: 36px;
+  font-weight: 100;
+  padding: 20px;
+  line-height: 28px;
+  text-align: left;
+  display: block;
+  margin-bottom: 0;
+}
+#temperature-description {
+  text-align: left;
+  line-height: 1; 
+}
+h2 {
+  color: #5c636a;
+  font-size: 35px;
+  line-height: 1;
   text-align: center;
-  }
-  ul {
-    display: block;
-    margin: -5px;
-    list-style: none;
-    padding: 0;
-    font-size: 10px;
-  }
-  li {
-    padding: 10px 0;
-    font-size: 10px;
-    color: #7cb0d2;
-  }
-  
-  .current-weather {
-    max-width: 15%;
-    height: auto; 
-    display: block;
-    width: 80%;
-    position: relative;
-    left: 15px; 
-    top: -80px;
-  }
-  .monday-weather {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    width: 100px;
-    position: relative;
-    left: 0;
-    top: 0;
-  }
-  
-  .tuesday-weather {
-    max-width: 100%;
-    height: auto;
-    width: 100px;
-    display: block;
-    position: relative;
-    left: 0;
-    top: 0;
-  }
-  .wednesday-weather {
-    max-width: 100%;
-    height: auto;
-    width: 100px;
-    display: block;
-    position: relative;
-    left: 0;
-    top: 0;
-  }
-  .thursday-weather {
-    max-width: 100%;
-    height: auto;
-    width: 100px;
-    display: block;
-    position: relative;
-    left: 0;
-    top: 0;
-  }
-  .friday-weather {
-    max-width: 100%;
-    height: auto;
-    width: 100px;
-    display: block;
-    position: relative;
-    left: 0;
-    top: 0;
-  }
-  .saturday-weather {
-    max-width: 100%;
-    height: auto;
-    width: 100px;
-    display: block;
-    position: relative;
-    left: 0;
-    top: 0;
-  }
-  .sunday-weather {
-    max-width: 100%;
-    height: auto;
-    width: 100px;
-    display: block;
-    position: relative;
-    left: 0;
-    top: 0;
-  }
-  p {
-    font-family: "Shippori Mincho B1", serif;
-    color: #5c636a;
-    font-size: 24px;
-  }
-  
-  span {
-    font-size: 12px;
-  }
-  
-  .small-icons {
-    width: 35px;
-    padding: 10px 0px;
-    display: block;
-    position: relative;
-    right: -300px;
-  }
-  .footer {
-    text-align: center;
-    font-size: 15px;
-    margin-top: 10px;
-    color: black;
-    text-align: center;
-  }
-  
-  .icons {
-    color: grey;
-    font-size: 12px;
-    text-align: center;
-  }
-  
+}
+
+h3 {
+  font-size: 25px;
+  line-height: 1;
+  color: #5c636a;
+  text-align: center;
+}
+h4 {
+  text-align: center;
+  font-size: 25px;
+  color: #5c636a;
+}
+.current-temperature {
+  display: block;
+  position: relative;
+  left: 0px;
+}
+.degrees {
+  display: inline; 
+  font-size: medium;
+  position: relative;
+  top: -40px;
+  right: -300px; 
+}
+
+p {
+  font-family: "Shippori Mincho B1", serif;
+  font-size: 35px;
+  line-height: 1;
+  color: #5c636a;
+  text-align: center;
+}
+
+#current-date {
+  font-weight: 100;
+  font-size: 25px;
+  text-align: left; 
+}
+.search-form {
+  margin: 0 auto;
+}
+
+.button {
+  font-size: 13px;
+  box-shadow: rgb(0 0 0 / 20%) 0 3px 3px 0;
+  background-color: #134a61;
+  color: white;
+}
+.button:hover {
+  color: white;
+  background-color: #2da3d6;
+}
+#current-btn {
+  position: relative;
+  left: 300px;
+  top: -85px;
+  border-radius: 12px;
+  color: white;
+  width: 100%;
+  background-image: linear-gradient(to top, #a3bded 0%, #6991c7 100%);
+}
+#current-btn hover {
+  color: grey;
+  background-image: linear-gradient(to top, #6a85b6 0%, #bac8e0 100%);
+  cursor: pointer;
+}
+
+a {
+  text-align: right;
+}
+
+.current-stats {
+  display: block;
+  font-size: 15px;
+  font-weight:100;
+  height: 20px;
+  line-height: 19px;
+  text-align: right;
+  list-style: none; 
+  margin: 0;
+  padding: 9;
+}
+.wind {
+  text-align: center; 
+}
+.humidity {
+text-align: center;
+}
+ul {
+  display: block;
+  margin: 0;
+  list-style: none;
+  padding: 0;
+  font-size: 10px;
+}
+li {
+  list-style: none;
+  font-size: 16px;
+  color: #7cb0d2;
+  font-weight: 100;
+  line-height: 19px; 
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+li:first-letter {
+  text-transform: capitalize;
+}
+
+.weather-temperature img {
+  height: 64px; 
+  width: 64px;
+  margin-right: 15px;
+  float: left;
+}
+.monday-weather {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  width: 100px;
+  position: relative;
+  left: 0;
+  top: 0;
+}
+
+.tuesday-weather {
+  max-width: 100%;
+  height: auto;
+  width: 100px;
+  display: block;
+  position: relative;
+  left: 0;
+  top: 0;
+}
+.wednesday-weather {
+  max-width: 100%;
+  height: auto;
+  width: 100px;
+  display: block;
+  position: relative;
+  left: 0;
+  top: 0;
+}
+.thursday-weather {
+  max-width: 100%;
+  height: auto;
+  width: 100px;
+  display: block;
+  position: relative;
+  left: 0;
+  top: 0;
+}
+.friday-weather {
+  max-width: 100%;
+  height: auto;
+  width: 100px;
+  display: block;
+  position: relative;
+  left: 0;
+  top: 0;
+}
+.saturday-weather {
+  max-width: 100%;
+  height: auto;
+  width: 100px;
+  display: block;
+  position: relative;
+  left: 0;
+  top: 0;
+}
+.sunday-weather {
+  max-width: 100%;
+  height: auto;
+  width: 100px;
+  display: block;
+  position: relative;
+  left: 0;
+  top: 0;
+}
+p {
+  font-family: "Shippori Mincho B1", serif;
+  color: #5c636a;
+  font-size: 24px;
+  text-align: left;
+}
+
+span {
+  font-size: 12px;
+}
+
+
+.footer {
+  text-align: center;
+  font-size: 15px;
+  margin-top: 10px;
+  color: black;
+  text-align: center;
+}
+
+.icons {
+  color: grey;
+  font-size: 12px;
+  text-align: center;
+}
+
+.container {
+  margin: 30px auto;
+  border-radius: 10px;
+  box-shadow: rgb(0 0 0 / 20%) 0 5px 5px 0;
+  max-width: 600px;
+  height: auto;
+  padding: 20px;
+  border: 1px solid #dadde1;
+  background-image: linear-gradient(to top, #fddb92 0%, #d1fdff 100%);
+
+}
