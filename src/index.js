@@ -38,6 +38,46 @@ function formatDate(date) {
   let currentMonth = months[now.getMonth()];
   return `${currentDay} ${currentMonth} ${currentDate}, ${year}, ${hours}:${minutes}`;
 }
+
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row">`;
+  let days = ["Mon", "Tues", "Weds", "Thurs", "Fri", "Sat"];
+  days.forEach(function(day) {
+    forecastHTML = forecastHTML + `
+      <div class="col-2">
+          <strong><span class="weather-forecast-date">${day}</span>
+              <br/>
+              <span class="weather-condition"><i class="fas fa sun"></i></span>
+              <br/>
+              <span id="first-day-temp-max">22</span>
+              <span id="first-day-temp-min">14</span>
+          </strong>
+          <div class="units">
+              <a href="#" id="future-temp-celcius">℃</a>
+              <img class="monday-weather" src="http://openweathermap.org/img/wn/50d@2x.png" alt="" width="42" />
+          </div>
+      </div>`;
+  });
+  
+  forecastHTML = forecastHTML + `
+      <div class="col-2">
+          <strong><span class="weather-forecast-date">Mon</span>
+              <br/>
+              <span class="weather-condition"><i class="fas fa sun"></i></span>
+              <br/>
+              <span id="first-day-temp-max">22</span>
+              <span id="first-day-temp-min">14</span>
+          </strong>
+          <div class="units">
+              <a href="#" id="future-temp-celcius">℃</a>
+              <img class="monday-weather" src="http://openweathermap.org/img/wn/50d@2x.png" alt="" width="42" />
+          </div>
+      </div>`;
+  forecastHTML = forecastHTML+`</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
 function updateCity(event) {
   event.preventDefault();
   let city = document.querySelector("#input-city");
@@ -67,6 +107,7 @@ function showFahrenheitTemperature(event) {
   temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 }
 let fahrenheitTemperature = null;
+
 function displayTemperature(response) {
   let temperature = Math.round(response.data.main.temp);
   console.log(response);
@@ -88,6 +129,8 @@ function displayTemperature(response) {
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
 }
+displayForecast();
+
 let dateElement = document.querySelector("#date");
 let currentTime = new Date();
 dateElement.innerHTML = formatDate(currentTime);
