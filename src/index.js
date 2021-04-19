@@ -64,8 +64,8 @@ function displayForecast(response) {
               <br/>
               <span class="weather-condition"><i class="fas fa sun"></i></span>
               <br/>
-              <span id="first-day-temp-max"> ${Math.round(forecastDay.temp.max)}</span>
-              <span id="first-day-temp-min"> ${Math.round(forecastDay.temp.min)}</span>
+              <span id="first-day-temp-max"> ${Math.round(forecastDay.temp.max)}º</span>
+              <span id="first-day-temp-min"> ${Math.round(forecastDay.temp.min)}º</span>
           </strong>
           <div class="units">
               <a href="#" id="future-temp-celcius">℃</a>
@@ -109,26 +109,11 @@ function updateCity(event) {
 }
 function search(city) {
   let apiKey = "0f3d4549d502cb2a816dc90919978e74";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric`;
   axios.get(`${apiUrl}&appid=${apiKey}`).then(displayTemperature);
 }
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", updateCity);
-function showCelciusTemperature(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#temperature");
-  fahrenheitLink.classList.add("active");
-  let celciusTemperature = (fahrenheitTemperature - 32) * (5 / 9);
-  temperatureElement.innerHTML = Math.round(celciusTemperature);
-}
-function showFahrenheitTemperature(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#temperature");
-  celciusLink.classList.remove("active");
-  fahrenheitLink.classList.add("active");
-  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
-}
-let fahrenheitTemperature = null;
 
 function displayTemperature(response) {
   let temperature = Math.round(response.data.main.temp);
@@ -156,7 +141,6 @@ function displayTemperature(response) {
   
 }
 
-
 let dateElement = document.querySelector("#date");
 let currentTime = new Date();
 dateElement.innerHTML = formatDate(currentTime);
@@ -182,8 +166,5 @@ function getCurrentPosition(event) {
 }
 let currentButton = document.querySelector("#current-btn");
 currentButton.addEventListener("click", getCurrentPosition);
-let celciusLink = document.querySelector("#celcius-link");
-celciusLink.addEventListener("click", showCelciusTemperature);
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", showFahrenheitTemperature);
+
 search("London");
