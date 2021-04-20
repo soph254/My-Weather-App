@@ -40,6 +40,8 @@
                           <p id="temperature-description">Mostly Sunny</p>
                           <br/>
                           <div class="current-temperature" class="float-left"><h4 id="temperature">℃></div>
+                            <p class=degrees><a href="#" id="celcius-link">°C</a> |
+                                <a href="#" id="fahrenheit-link">°F</a></p></h4>
                           
                       </div>
                     </div>
@@ -56,6 +58,65 @@
                     <br/>
                     <p>Temperature in ℃</p>
                         <div class="weather-forecast" id="forecast"></div>
+                        <div class="col-2">
+                            <strong><span class="weather-forecast-date">${formatday(forecastDay.dt)}</span>
+                                <br/>
+                                <span class="weather-condition"><i class="fas fa sun"></i></span>
+                                <br/>
+                                <span id="first-day-temp-max"> ${Math.round(forecastDay.temp.max)}º</span>
+                                <span id="first-day-temp-min"> ${Math.round(forecastDay.temp.min)}º</span>
+                            </strong>
+                            <div class="units">
+                                <a href="#" id="future-temp-celcius">℃</a>
+                                <img class="monday-weather" src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png" alt="" width="42" />
+                            </div>
+                              <div class="col-2">
+                                      <strong
+                                      ><span id="second-day">Tuesday</span>
+                                      <br />
+                                      <span class="weather-condition"
+                                        ><i class="fas fa-sun"></i
+                                      ></span>
+                                      <br />
+                                      <span id="second-day-temp-max">22</span>
+                                      <span id= "second-day-temp-min">18</span>
+                                    </strong>
+                                    <div class="units">
+                                      <a href="#" id="future-temp-celcius">°C</a>
+                                      <img class='tuesday-weather' src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png" alt="" width="42" />
+                                    </div> 
+                                    <div class="col-2">
+                                        <strong
+                                        ><span id="third-day">Wednesday</span>
+                                        <br />
+                                        <span class="weather-condition"
+                                          ><i class="fas fa-sun"></i
+                                        ></span>
+                                        <br />
+                                        <span id="third-day-temp-max">18</span>
+                                        <span id= "third-day-temp-min">10</span>
+                                      </strong>
+                                      <div class="units">
+                                        <a href="#" id="future-temp-celcius">°C</a>
+                                        <img class='wednesday-weather' src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png" alt="" width="42" />
+                                      </div> 
+                                      <div class="col-2">
+                                        <strong
+                                        ><span id="fourth-day">Thursday</span>
+                                        <br />
+                                        <span class="weather-condition"
+                                          ><i class="fas fa-sun"></i
+                                        ></span>
+                                        <br />
+                                        <span id="fourth-day-temp-max">24</span>
+                                        <span id= "fourth-day-temp-min">12</span>
+                                      </strong>
+                                      <div class="units">
+                                        <a href="#" id="future-temp-celcius">°C</a>
+                                        <img class='thurday-weather' src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png" alt="" width="42" />
+                                      </div> 
+                        </div>
+        </div>
                     
             </div>
         </div>

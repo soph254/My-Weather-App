@@ -101,6 +101,22 @@ function search(city) {
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", updateCity);
 
+function showCelciusTemperature(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+  fahrenheitLink.classList.add("active");
+  let celciusTemperature = (fahrenheitTemperature - 32) * (5 / 9);
+  temperatureElement.innerHTML = Math.round(celciusTemperature);
+}
+function showFahrenheitTemperature(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+  celciusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+}
+let fahrenheitTemperature = null;
+
 function displayTemperature(response) {
   let temperature = Math.round(response.data.main.temp);
   console.log(response);
@@ -152,5 +168,10 @@ function getCurrentPosition(event) {
 }
 let currentButton = document.querySelector("#current-btn");
 currentButton.addEventListener("click", getCurrentPosition);
+
+let celciusLink = document.querySelector("#celcius-link");
+celciusLink.addEventListener("click", showCelciusTemperature);
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", showFahrenheitTemperature);
 
 search("London");
