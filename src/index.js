@@ -90,8 +90,9 @@ function updateCity(event) {
   event.preventDefault();
   let city = document.querySelector("#input-city");
   let cityName = document.querySelector(".current-city");
-  cityName.innerHTML = `${city.value}`;
-  search(city.value);
+  let finalName = city.value[0].toUpperCase() + city.value.substring(1)
+  cityName.innerHTML = `${finalName}`;
+  search(finalName);
 }
 function search(city) {
   let apiKey = "0f3d4549d502cb2a816dc90919978e74";
