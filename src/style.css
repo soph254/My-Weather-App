@@ -110,6 +110,10 @@ a {
   text-decoration: none;
 }
 
+#temperature-description {
+  display: inline;
+}
+
 ul {
   text-align: right;
   font-size: 25px;
