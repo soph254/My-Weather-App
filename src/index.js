@@ -7,7 +7,7 @@ function formatDate(date) {
   }
   let minutes = date.getMinutes();
   if (minutes < 10) {
-    //  minutes = '0${minutes}';
+      minutes = '0${minutes}';
   }
   let year = now.getFullYear();
   let currentDate = now.getDate();
