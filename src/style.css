@@ -3,7 +3,7 @@ body {
   
 }
   
-#current-city {
+.current-city {
   color: #5c636a;
   font-size: 36px;
   font-weight: 100;
