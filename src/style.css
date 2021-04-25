@@ -31,9 +31,9 @@ h3 {
   text-align: center;
 }
 h4 {
-  text-align: center;
   font-size: 25px;
   color: #5c636a;
+  display: inline;
 }
 .current-temperature {
   display: block;
@@ -41,12 +41,12 @@ h4 {
   left: 0px;
 }
 
-p {
+p.degrees {
   font-family: "Shippori Mincho B1", serif;
   font-size: 35px;
   line-height: 1;
   color: #5c636a;
-  text-align: center;
+  display: inline-block;
 }
 
 #current-date {
