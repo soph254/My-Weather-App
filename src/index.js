@@ -61,7 +61,7 @@ function displayForecast(response) {
     forecastHTML = forecastHTML + `
       <div class="col-2">
           <div class="weather-forecast-date">${formatday(forecastDay.dt)}</div>
-          <img class="monday-weather" src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" alt="" width="42" />
+          <img class="todays-weather" src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" alt="" width="42" />
           <div class="weather-forecast-temperature">
               <span id="first-day-temp-max"> ${Math.round(forecastDay.temp.max)}º</span>
               <span id="first-day-temp-min"> ${Math.round(forecastDay.temp.min)}º</span>
@@ -71,7 +71,7 @@ function displayForecast(response) {
     }
   });
   
-  forecastHTML = forecastHTML+`</div>`;
+  forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
 
