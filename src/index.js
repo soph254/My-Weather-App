@@ -60,15 +60,30 @@ function displayForecast(response) {
     
     forecastHTML = forecastHTML + `
       <div class="col-2">
-          <div class="weather-forecast-date">${formatday(forecastDay.dt)}</div>
-          <img class="todays-weather" src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" alt="" width="42" />
-          <div class="weather-forecast-temperature">
-              <span id="first-day-temp-max"> ${Math.round(forecastDay.temp.max)}º</span>
-              <span id="first-day-temp-min"> ${Math.round(forecastDay.temp.min)}º</span>
-          </strong>              
-          </div>
-      </div>`;
-    }
+      <div class = "weather-forecast-date"> ${formatDay(forecastDay.dt)}</div>
+      <img
+      src = "https://openweathermap.org/img/wn/${
+          forecastDay.weather[0].icon
+      }@2x.png"
+      alt = ""
+      width= "60px"
+      />
+      <div class = "weather-forecast-temperatures">
+      <span class = "weather-forecast-temperatures-min">
+      ${
+          Math.round(forecastDay.temp.min)
+      }</span> °|
+      <span class = "weather-forecast-temperatures-max">
+      ${
+          Math.round(forecastDay.temp.max)
+      }­</span>°
+      </div>
+      </div>
+      `;
+  }
+   forecastLowTemp = forecastDay.temp.min;
+   forecastHighTemp = forecastDay.temp.max;
+  
   });
   
   forecastHTML = forecastHTML + `</div>`;
