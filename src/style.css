@@ -72,7 +72,7 @@ h4 {
   color: white;
   background-image: linear-gradient(to top, #a3bded 0%, #6991c7 100%);
 }
-.current-btn hover {
+#current-btn hover {
   color: grey;
   background-image: linear-gradient(to top, #6a85b6 0%, #bac8e0 100%);
   cursor: pointer;
