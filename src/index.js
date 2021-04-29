@@ -115,7 +115,7 @@ function displayTemperature(response) {
   console.log(response);
   console.log(temperature);
   let degree = document.querySelector("#temperature");
-  degree.innerHTML = `${temperature}`;
+  degree.innerHTML = `${temperature} °`;
   let description = document.querySelector("#temperature-description");
   description.innerHTML = response.data.weather[0].description;
   let humidity = Math.round(response.data.main.humidity);
