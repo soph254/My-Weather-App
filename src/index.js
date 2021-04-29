@@ -69,21 +69,18 @@ function displayForecast(response) {
       width= "60px"
       />
       <div class = "weather-forecast-temperatures">
-      <span class = "weather-forecast-temperatures-min">
-      ${
-          Math.round(forecastDay.temp.min)
-      }</span> °|
       <span class = "weather-forecast-temperatures-max">
       ${
           Math.round(forecastDay.temp.max)
-      }­</span>°
+      } °</span> 
+      <span class = "weather-forecast-temperatures-max">
+      ${
+          Math.round(forecastDay.temp.min)
+      }­ °</span>
       </div>
       </div>
       `;
   }
-   forecastLowTemp = forecastDay.temp.min;
-   forecastHighTemp = forecastDay.temp.max;
-  
   });
   
   forecastHTML = forecastHTML + `</div>`;
@@ -113,22 +110,6 @@ function search(city) {
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", updateCity);
 
-function showCelciusTemperature(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#temperature");
-  fahrenheitLink.classList.add("active");
-  let celciusTemperature = (fahrenheitTemperature - 32) * (5 / 9);
-  temperatureElement.innerHTML = Math.round(celciusTemperature);
-}
-function showFahrenheitTemperature(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#temperature");
-  celciusLink.classList.remove("active");
-  fahrenheitLink.classList.add("active");
-  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
-}
-let fahrenheitTemperature = null;
-
 function displayTemperature(response) {
   let temperature = Math.round(response.data.main.temp);
   console.log(response);
@@ -140,7 +121,7 @@ function displayTemperature(response) {
   let humidity = Math.round(response.data.main.humidity);
   let humidityElement = document.querySelector(".humidity");
   humidityElement.innerHTML = `${humidity}%`;
-  let wind = Math.round(response.data.main.humidity);
+  let wind = Math.round(response.data.wind.speed);
   let windSpeed = document.querySelector(".wind");
   windSpeed.innerHTML = `${wind}mph`;
   let iconElement = document.querySelector("#icon");
@@ -181,9 +162,5 @@ function getCurrentPosition(event) {
 let currentButton = document.querySelector("#current-btn");
 currentButton.addEventListener("click", getCurrentPosition);
 
-let celciusLink = document.querySelector("#celcius-link");
-celciusLink.addEventListener("click", showCelciusTemperature);
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", showFahrenheitTemperature);
 
 search("London");

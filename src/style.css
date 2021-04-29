@@ -142,70 +142,7 @@ li:first-letter {
   font-size: 16px;
   color: #A6A6A4;
 }
-.monday-weather {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  width: 100px;
-  position: relative;
-  left: 0;
-  top: 0;
-}
 
-.tuesday-weather {
-  max-width: 100%;
-  height: auto;
-  width: 100px;
-  display: block;
-  position: relative;
-  left: 0;
-  top: 0;
-}
-.wednesday-weather {
-  max-width: 100%;
-  height: auto;
-  width: 100px;
-  display: block;
-  position: relative;
-  left: 0;
-  top: 0;
-}
-.thursday-weather {
-  max-width: 100%;
-  height: auto;
-  width: 100px;
-  display: block;
-  position: relative;
-  left: 0;
-  top: 0;
-}
-.friday-weather {
-  max-width: 100%;
-  height: auto;
-  width: 100px;
-  display: block;
-  position: relative;
-  left: 0;
-  top: 0;
-}
-.saturday-weather {
-  max-width: 100%;
-  height: auto;
-  width: 100px;
-  display: block;
-  position: relative;
-  left: 0;
-  top: 0;
-}
-.sunday-weather {
-  max-width: 100%;
-  height: auto;
-  width: 100px;
-  display: block;
-  position: relative;
-  left: 0;
-  top: 0;
-}
 p {
   font-family: "Shippori Mincho B1", serif;
   color: #5c636a;
