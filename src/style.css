@@ -40,14 +40,12 @@ h4 {
   position: relative;
   left: 0px;
 }
-
-p.degrees {
-  font-family: "Shippori Mincho B1", serif;
-  line-height: 1;
-  color: #5c636a;
-  display: inline-block;
+.humidity {
+  font-size: 25px;
 }
-
+.wind {
+  font-size: 25px;
+}
 #current-date {
   font-weight: 100;
   font-size: 25px;
